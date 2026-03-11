@@ -10,7 +10,10 @@ public class Morador {
 	private String residencia;
 	
 	public Morador(String nome, String cpf, String senha, String residencia) {
-		if (cpf== null || cpf.length() != 11)
+		if (nome == null || nome.trim().equals(""))
+ 			throw new IllegalArgumentException("Nome inválido!");
+		
+		if (cpf == null || cpf.length() != 11)
             throw new IllegalArgumentException("O CPF deve ter onze dígitos!");
 		
 		if (senha == null || senha.length() < 8)
